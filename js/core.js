@@ -55,7 +55,7 @@ class SoundEngine {
   async play(name, loop = false, gainVal = 1.0) {
     this.ensure();
     const filename = `${name}.mp3`;
-    const url = window.getAsset(`public/sounds/${filename}`);
+    const url = window.getAsset(`assets/sounds/${filename}`);
     let buf = this.buffers[name];
     if (!buf) {
       buf = await this.loadSound(name, url);

@@ -318,28 +318,28 @@
 }
 
 .faction-hanza {
-  background-image: url(../public/images/factions-hanza.jpg);
+  background-image: url(../assets/images/factions-hanza.jpg);
 }
 
 .faction-fanatici {
-  background-image: url(../public/images/fractions-fanatics.jpg);
+  background-image: url(../assets/images/fractions-fanatics.jpg);
 }
 
 .faction-bandits {
-  background-image: url(../public/images/factions-bandits.jpg);
+  background-image: url(../assets/images/factions-bandits.jpg);
 }
 
 .faction-fire-worshippers {
-  background-image: url(../public/images/factions-fireworship.jpg);
+  background-image: url(../assets/images/factions-fireworship.jpg);
 }
 
 .faction-children-of-the-forest {
-  background-image: url(../public/images/fractions-children-of-the-forest.jpg);
+  background-image: url(../assets/images/fractions-children-of-the-forest.jpg);
 }
 
 /* Hazard Section */ 
 .hazards {
-  background-image: url(../public/images/hazard-background.png);
+  background-image: url(../assets/images/hazard-background.png);
   background-size: auto;
   background-position: center;
   background-repeat: repeat;
@@ -416,19 +416,19 @@
 }
 
 .hazard-radiation {
-  background-image: url(../public/images/hazard-radiation.png);
+  background-image: url(../assets/images/hazard-radiation.png);
 }
 
 .hazard-anomaly {
-  background-image: url(../public/images/hazard-anomaly.png);
+  background-image: url(../assets/images/hazard-anomaly.png);
 }
 
 .hazard-sandstorm {
-  background-image: url(../public/images/hazard-sandstorm.png);
+  background-image: url(../assets/images/hazard-sandstorm.png);
 }
 
 .hazard-survival {
-  background-image: url(../public/images/hazard-survival.png);
+  background-image: url(../assets/images/hazard-survival.png);
 }
   
 

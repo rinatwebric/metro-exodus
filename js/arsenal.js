@@ -7,63 +7,63 @@ document.addEventListener('DOMContentLoaded', () => {
     tikhar: {
       name: 'Пневматическая винтовка «Тихарь»',
       desc: 'Самодельное бесшумное пневматическое оружие. Стреляет стальными шариками и зажигательными пулями. Требует ручной подкачки давления.',
-      img: 'public/images/weapon-tikhar.jpg',
+      img: 'assets/images/weapon-tikhar.jpg',
       serial: 'СЕРИЯ: SP-TK77 // ПНЕВМАТИКА',
       base: { damage: 75, accuracy: 85, stability: 70 }
     },
     bulldog: {
       name: 'Автомат «Бульдог»',
       desc: 'Компактная штурмовая булл-пап винтовка под патрон 5.45. Высокий темп огня и отличная маневренность в узких коридорах метро.',
-      img: 'public/images/weapon-bulldog.jpg',
+      img: 'assets/images/weapon-bulldog.jpg',
       serial: 'СЕРИЯ: BD-99 // АВТОМАТ',
       base: { damage: 65, accuracy: 70, stability: 80 }
     },
     ashot: {
       name: 'Одноствольный пистолет «Ашот»',
       desc: 'Грубый кустарный дробовик-пистолет 12-го калибра. Сокрушительная мощь на ближней дистанции, способная остановить любого мутанта.',
-      img: 'public/images/weapon-ashot.jpeg',
+      img: 'assets/images/weapon-ashot.jpeg',
       serial: 'СЕРИЯ: ASH-12 // ДРОБОВИК',
       base: { damage: 95, accuracy: 40, stability: 50 }
     },
     uboinik: {
       name: 'Автоматический дробовик «Убойник»',
       desc: 'Револьверный шестизарядный боевой дробовик. Обладает высочайшей скорострельностью в ближнем бою и сокрушительным останавливающим действием.',
-      img: 'public/images/Uboinik.jpg',
+      img: 'assets/images/Uboinik.jpg',
       serial: 'СЕРИЯ: UB-6X // ДРОБОВИК',
       base: { damage: 90, accuracy: 45, stability: 60 }
     },
     flamethrower: {
       name: 'Тяжёлый «Огнемёт»',
       desc: 'Кустарное смертоносное оружие, выжигающее логова пауков, кикимор и слепых мутантов. Создает плотную стену всепожирающего пламени.',
-      img: 'public/images/flame-thrower.jpg',
+      img: 'assets/images/flame-thrower.jpg',
       serial: 'СЕРИЯ: FLM-44 // ОГНЕМЁТ',
       base: { damage: 100, accuracy: 35, stability: 65 }
     },
     helsing: {
       name: 'Пневматический арбалет «Хельсинг»',
       desc: 'Бесшумный многозарядный арбалет с барабанной подачей стрел. Идеален для бесшумного устранения часовых в лесах Тайги и возврата болтов.',
-      img: 'public/images/helsing.jpg',
+      img: 'assets/images/helsing.jpg',
       serial: 'СЕРИЯ: HLS-08 // АРБАЛЕТ',
       base: { damage: 85, accuracy: 90, stability: 85 }
     },
     ventil: {
       name: 'Снайперская винтовка «Вентиль»',
       desc: 'Крупнокалиберная магазинная снайперская винтовка с ручным продольно-скользящим затвором. Абсолютная точность и убойная сила на предельных дистанциях.',
-      img: 'public/images/ventil.jpg',
+      img: 'assets/images/ventil.jpg',
       serial: 'СЕРИЯ: VTL-762 // СНАЙПЕРСКАЯ',
       base: { damage: 98, accuracy: 95, stability: 55 }
     },
     ak103: {
       name: 'Штурмовой автомат «АК-103» / Калаш',
       desc: 'Легендарный автомат Калашникова под мощный патрон 7.62x39. Непревзойденная надежность в грязи, песке, радиоактивной пыли и сибирском морозе.',
-      img: 'public/images/ak-103.webp',
+      img: 'assets/images/ak-103.webp',
       serial: 'СЕРИЯ: AK-103 // АВТОМАТ',
       base: { damage: 80, accuracy: 75, stability: 75 }
     },
     revolver: {
       name: 'Револьвер Ордена',
       desc: 'Надежный крупнокалиберный револьвер. Основа экипировки каждого спартанца: безотказная механика и возможность превращения в карабин.',
-      img: 'public/images/revolver.jpeg',
+      img: 'assets/images/revolver.jpeg',
       serial: 'СЕРИЯ: REV-44 // ПИСТОЛЕТ',
       base: { damage: 70, accuracy: 80, stability: 65 }
     }
@@ -141,25 +141,25 @@ document.addEventListener('DOMContentLoaded', () => {
     knife: {
       name: 'Метательный армейский нож',
       desc: 'Тяжелый закаленный клинок для бесшумного мгновенного устранения противников. Брошенный нож можно подобрать с тела поверженного врага.',
-      img: 'public/images/армейский-нож.webp',
+      img: 'assets/images/армейский-нож.webp',
       serial: 'СЕРИЯ: SP-KN01 // ХОЛОДНОЕ ОРУЖИЕ'
     },
     can: {
       name: 'Банка',
       desc: 'Жестяная банка, которая при броске создает шум, отвлекая противников или заставляя их покинуть укрытие.',
-      img: 'public/images/banka.webp',
+      img: 'assets/images/banka.webp',
       serial: 'СЕРИЯ: DEC-00 // ДИВЕРСИЯ'
     },
     grenade: {
       name: 'Граната',
       desc: 'Самодельная фугасная граната со шрапнелью. Обладает большим радиусом поражения.',
-      img: 'public/images/granata.webp',
+      img: 'assets/images/granata.webp',
       serial: 'СЕРИЯ: EXP-73 // ВЗРЫВЧАТКА'
     },
     molotov: {
       name: 'Коктейль Молотова',
       desc: 'Бутылка с зажигательной смесью. Создает очаг открытого огня, выжигая противников и мутантов в укрытиях.',
-      img: 'public/images/molotov.webp',
+      img: 'assets/images/molotov.webp',
       serial: 'СЕРИЯ: INC-99 // ЗАЖИГАТЕЛЬНОЕ'
     }
   };

@@ -14,12 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const LOCATIONS = {
-    moscow: { title: 'Москва', desc: 'Зимний перегон, заброшенные вокзалы', weather: 'snow', img: 'public/images/loc-moscow.jpeg' },
-    volga: { title: 'Волга', desc: 'Затопленные болота, обломки мостов', weather: 'rain', img: 'public/images/loc-volga.png' },
-    yamantau: { title: 'Ямантау', desc: 'Подземные штреки, коридоры смерти', weather: 'ash', img: 'public/images/loc-yamantau.webp' },
-    caspian: { title: 'Каспий', desc: 'Высохшее море, ржавые танкеры', weather: 'sandstorm', img: 'public/images/loc-caspian.jpg' },
-    taiga: { title: 'Тайга', desc: 'Заброшенные лагеря, сосновый бор', weather: 'rain', img: 'public/images/loc-taiga.jpg' },
-    novosibirsk: { title: 'Новосибирск', desc: 'Мертвый город, заваленные туннели', weather: 'snow', img: 'public/images/loc-novosibirsk.webp' }
+    moscow: { title: 'Москва', desc: 'Зимний перегон, заброшенные вокзалы', weather: 'snow', img: 'assets/images/loc-moscow.jpeg' },
+    volga: { title: 'Волга', desc: 'Затопленные болота, обломки мостов', weather: 'rain', img: 'assets/images/loc-volga.png' },
+    yamantau: { title: 'Ямантау', desc: 'Подземные штреки, коридоры смерти', weather: 'ash', img: 'assets/images/loc-yamantau.webp' },
+    caspian: { title: 'Каспий', desc: 'Высохшее море, ржавые танкеры', weather: 'sandstorm', img: 'assets/images/loc-caspian.jpg' },
+    taiga: { title: 'Тайга', desc: 'Заброшенные лагеря, сосновый бор', weather: 'rain', img: 'assets/images/loc-taiga.jpg' },
+    novosibirsk: { title: 'Новосибирск', desc: 'Мертвый город, заваленные туннели', weather: 'snow', img: 'assets/images/loc-novosibirsk.webp' }
   };
 
   // Данные о каждой остановке поезда: название, км, сезон, описание.

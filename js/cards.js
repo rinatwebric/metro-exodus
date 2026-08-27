@@ -9,20 +9,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Array of atmospheric Metro Exodus images for rich visual presentation
   const cardImages = [
-    '../public/images/presentation-img.png',
-    '../public/images/metro-exodus-ss-1.webp',
-    '../public/images/metro-exodus-ss-2.webp',
-    '../public/images/metro-exodus-ss-3.webp',
-    '../public/images/metro-exodus-ss-4.webp',
-    '../public/images/metro-exodus-ss-5.webp',
-    '../public/images/metro-exodus-ss-6.webp',
-    '../public/images/metro-exodus-ss-7.webp',
-    '../public/images/metro-exodus-ss-8.webp',
-    '../public/images/metro-exodus-ss-9.webp',
-    '../public/images/hazard-survival.png',
-    '../public/images/loc-moscow.jpeg',
-    '../public/images/loc-volga.png',
-    '../public/images/loc-caspian.jpg'
+    '../assets/images/presentation-img.png',
+    '../assets/images/metro-exodus-ss-1.webp',
+    '../assets/images/metro-exodus-ss-2.webp',
+    '../assets/images/metro-exodus-ss-3.webp',
+    '../assets/images/metro-exodus-ss-4.webp',
+    '../assets/images/metro-exodus-ss-5.webp',
+    '../assets/images/metro-exodus-ss-6.webp',
+    '../assets/images/metro-exodus-ss-7.webp',
+    '../assets/images/metro-exodus-ss-8.webp',
+    '../assets/images/metro-exodus-ss-9.webp',
+    '../assets/images/hazard-survival.png',
+    '../assets/images/loc-moscow.jpeg',
+    '../assets/images/loc-volga.png',
+    '../assets/images/loc-caspian.jpg'
   ];
 
   async function fetchCards() {
