@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>METRO EXODUS | Официальный Промо-Портал</title>
+  <meta name="description" content="Официальный мультистраничный промо-портал игры Metro Exodus. Исследуйте постапокалиптическую Россию на борту бронепоезда «Аврора».">
+  <link rel="icon" type="image/svg+xml" href="/public/images/logo-title.png">
+  <link rel="preconnect" href="https://player.vimeo.com">
+  <link rel="preconnect" href="https://vod-progressive.akamaized.net">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- Кастомный курсор -->
+  <div class="custom-cursor" id="cursor"></div>
+  <div class="custom-cursor-dot" id="cursor-dot"></div>
+
+  <!-- Шапка сайта: логотип, навигация, кнопки цвета, подписка -->
+  <header>
+    <div class="header-container">
+      <div class="logo-nav-group">
+        <a href="index.html" class="logo-group">
+          <img src="public/images/metro-exodus-logo.png" alt="Metro Exodus" class="nav-logo-img">
+        </a>
+
+        <nav>
+          <ul>
+            <li><a href="index.html" class="active">Главная</a></li>
+            <li><a href="pages/journey.html">Маршрут</a></li>
+            <li><a href="pages/arsenal.html">Оружие</a></li>
+            <li><a href="pages/crew.html">Персонажи</a></li>
+            <li><a href="pages/survival.html">Выживание</a></li>
+            <li><a href="pages/cards.html">Карточки</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Кнопки цвета и подписка -->
+      <div class="hud-controls">
+        <div class="colors-buttons">
+          <div class="btn-color" data-color="#f5c518" style="background: #f5c518;" title="Янтарный Спарты"></div>
+          <div class="btn-color" data-color="#00d2ff" style="background: #00d2ff;" title="Неоновый Синий"></div>
+          <div class="btn-color" data-color="#2cb53e" style="background: #2cb53e;" title="Радиационный Зеленый"></div>
+          <div class="btn-color" data-color="#e23b3b" style="background: #e23b3b;" title="Аварийный Красный"></div>
+        </div>
+
+        <button class="btn btn-sm shimmer-btn" id="order-btn" style="padding: 0.4rem 0.95rem; font-size: 0.72rem;">ПОДПИСАТЬСЯ</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Главный экран: видео-фон, логотип, кнопки КУПИТЬ и ТРЕЙЛЕР -->
+  <section id="hero">
+    <div class="hero-bg">
+      <img src="public/images/presentation-img.png" alt="Metro Exodus Hero" class="hero-fallback-img">
+      <iframe
+        src="https://player.vimeo.com/video/1082503286?background=1&dnt=1&autoplay=1&loop=1&byline=0&title=0&muted=1"
+        class="hero-video-iframe"
+        frameborder="0"
+        allow="autoplay; fullscreen"
+        allowfullscreen
+        loading="eager"
+      ></iframe>
+      <div class="hero-gradient"></div>
+    </div>
+    <canvas id="hero-canvas" style="position: absolute; inset:0; pointer-events: none;"></canvas>
+    
+    <div class="hero-content reveal">
+      <div class="hero-top-logo-wrap">
+        <img src="public/images/metro-exodus-logo.png" alt="Metro Exodus" class="hero-center-logo">
+      </div>
+      
+      <div class="hero-bottom-actions">
+        <div class="hero-cta-stack">
+          <a href="https://store.steampowered.com/app/412020/Metro_Exodus/" target="_blank" rel="noopener noreferrer" class="btn-hero-primary" id="btn-buy-steam" style="text-decoration: none;">
+            <span id="hero-order-text">КУПИТЬ СЕЙЧАС</span>
+          </a>
+          
+          <button class="btn-hero-trailer" id="btn-watch-trailer" type="button" data-trailer-modal>
+            <svg class="play-icon" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <span>СМОТРЕТЬ ТРЕЙЛЕР</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-game">
+    <div class="container">
+      <div class="about-game-content">
+        <div class="section-header">
+          <h2 class="section-title">Путешествие за грань</h2>
+          <p class="section-desc">
+            Metro Exodus — это эпический сюжетный шутер от первого лица от студии 4A Games, сочетающий в себе напряженные бои и скрытное прохождение с исследованием мира и элементами хоррора на выживание в одной из самых атмосферных игровых вселенных.
+          </p>
+      </div>
+      <div class="about-game-video">
+        <iframe src="https://player.vimeo.com/video/563737485?autoplay=1&muted=1&background=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="factions">
+  <div class="container">
+    <div class="faction-main-title">
+      <h2>Фракции</h2>
+    </div>
+    <div class="faction-cards">
+      <div class="faction-card faction-hanza active-faction">
+        <div class="faction-content">
+          <h2 class="faction-title">Ганза</h2>
+          <p class="faction-description">Постапокалиптическое общество Московского метрополитена состоит из множества независимых станций и могущественных фракций. После кровопролитной гражданской войны между фашистами из «Рейха» и коммунистами из «Красной линии» доминирующей силой стала «Ганза». Она сохраняет относительно мирный курс, поощряя торговлю и гражданские свободы, и выступает естественным союзником элитного «Ордена спарты», который по-прежнему стремится поддерживать мир в метро...</p>
+        </div>
+      </div>
+
+      <div class="faction-card faction-fanatici">
+        <div class="faction-content">
+          <h2 class="faction-title">Фанатики</h2>
+          <p class="faction-description">На Пустошах возникло немало замкнутых общин, но едва ли найдется более странная, чем группа фанатиков, обосновавшихся у берегов Волги. Считая, что любые технологии — это безумие человечества и лишь отказ от них дарует спасение, эти люди под бдительным оком своего зловещего, но по-своему харизматичного лидера Силантия начали поклоняться великому и могучему зверю, таящемуся в глубинах вод…</p>
+        </div>
+      </div>
+
+      <div class="faction-card faction-bandits">
+        <div class="faction-content">
+          <h2 class="faction-title">Бандиты</h2>
+          <p class="faction-description">Когда не остается надежды на возвращение к нормальной жизни, неудивительно, что по всей пустоши возникают бандитские шайки. Свирепые и беспощадные банды, обосновавшиеся на берегах Волги, похоже, заключили между собой перемирие и теперь сосредоточились на том, чтобы терроризировать местных жителей и отбирать у них всё, что представляет хоть какую-то ценность.</p>
+        </div>
+      </div>
+
+      <div class="faction-card faction-fire-worshippers">
+        <div class="faction-content">
+          <h2 class="faction-title">Огнепоклонники</h2>
+          <p class="faction-description">Огнепоклонники это господствующий класс в неофеодальном обществе пустыни; они держатся с подобающей самоуверенностью и ни во что не ставят человеческую сущность своих противников. Своим названием они обязаны культу «Священного пламени», созданному их предводителем Бароном для того, чтобы держать порабощенное население в повиновении.</p>
+        </div>
+      </div>
+
+      <div class="faction-card faction-children-of-the-forest">
+        <div class="faction-content">
+          <h2 class="faction-title">Дети леса</h2>
+          <p class="faction-description">«Дети леса» это, по сути, группа детей, которые оказались отрезаны от мира в скаутском лагере с началом войны и так и не успели по-настоящему повзрослеть. Под опекой своего наставника, которого они называют Учителем, они научились выживать в дикой природе и противостоять любым угрозам будь то капризы погоды, свирепые звери, набеги бандитов или незваные гости.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <section class="hazards">
+    <div class="container">
+      <div class="section-header" style="text-align: center;">
+        <h2 class="section-title">Опасности</h2>
+      </div>
+      <div class="hazards-cards">
+        <div class="hazard-card hazard-radiation">
+          <div class="hazard-content hazad-active">
+            <h2 class="hazard-title">Радиация</h2>
+            <p class="hazard-description">Вся поверхность Москвы окутана пеленой опасной радиации. Чтобы дышать в таких условиях, Артему и рейнджерам приходится постоянно носить противогазы, когда они находятся на поверхности. Орден «Спарта» полагал, что за пределами Москвы царят столь же непригодные для жизни условия, но теперь всё изменилось…</p>
+          </div>
+        </div>
+        <div class="hazard-card hazard-anomaly">
+          <div class="hazard-content">
+            <h2 class="hazard-title">Аномалии</h2>
+            <p class="hazard-description">Эти гудящие синие сгустки электрической энергии  одна из диковин постапокалиптического мира. Чрезвычайно опасные для всего, что оказывается в радиусе их действия, эти странно притягательные сферы могут появляться как днем, так и ночью, но обычно движутся по одному и тому же маршруту.</p>
+          </div>
+        </div>
+        <div class="hazard-card hazard-sandstorm">
+          <div class="hazard-content">
+            <h2 class="hazard-title">Песчаные бури</h2>
+            <p class="hazard-description">Пустыня суровая среда даже в лучшие времена. Невыносимая жара, необходимость постоянного обслуживания техники из-за вездесущего песка и — если уж совсем не повезет  песчаные бури. Эти стены песка сводят видимость практически к нулю и могут стать смертельной угрозой, если вовремя не найти укрытие.</p>
+          </div>
+        </div>
+        <div class="hazard-card hazard-survival">
+          <div class="hazard-content">
+            <h2 class="hazard-title">Выживание</h2>
+            <p class="hazard-description">Оказаться отрезанным от цивилизации это серьезное испытание для ваших навыков выживания. Угрозу для жизни представляют не только дикие звери и природные опасности, но и нехватка ресурсов: здесь непросто найти боеприпасы и припасы.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Сетка скриншотов 3×3 — по клику открывается лайтбокс-слайдер -->
+  <section id="media" class="media-gallery-section" style="padding: 5rem 0 6rem 0;">
+    <div class="container">
+      <div class="section-header reveal" style="text-align: center; margin-bottom: 2.5rem;">
+        <h2 class="section-title" style="font-family: var(--font-heading); font-size: 2.6rem; letter-spacing: 0.15em;">МЕДИА</h2>
+        <div class="title-accent-bar" style="width: 46px; height: 3px; background: var(--primary); margin: 0.75rem auto 1.5rem auto; border-radius: 2px; box-shadow: 0 0 10px var(--primary-glow);"></div>
+        <p class="section-desc" style="max-width: 600px; margin: 0 auto; color: var(--foreground-muted);">
+          Кадры экспедиции «Авроры» сквозь постапокалиптические просторы России. Нажмите на любое изображение для просмотра в слайдере.
+        </p>
+      </div>
+
+      <div class="media-gallery-grid reveal">
+        <div class="media-grid-item" data-index="0" data-full="public/images/metro-exodus-ss-1.webp">
+          <img src="public/images/metro-exodus-ss-1.webp" alt="Metro Exodus Screenshot 1" loading="lazy">
+        </div>
+        <div class="media-grid-item" data-index="1" data-full="public/images/metro-exodus-ss-2.webp">
+          <img src="public/images/metro-exodus-ss-2.webp" alt="Metro Exodus Screenshot 2" loading="lazy">
+        </div>
+        <div class="media-grid-item" data-index="2" data-full="public/images/metro-exodus-ss-3.webp">
+          <img src="public/images/metro-exodus-ss-3.webp" alt="Metro Exodus Screenshot 3" loading="lazy">
+        </div>
+        <div class="media-grid-item" data-index="3" data-full="public/images/metro-exodus-ss-4.webp">
+          <img src="public/images/metro-exodus-ss-4.webp" alt="Metro Exodus Screenshot 4" loading="lazy">
+        </div>
+        <div class="media-grid-item" data-index="4" data-full="public/images/metro-exodus-ss-5.webp">
+          <img src="public/images/metro-exodus-ss-5.webp" alt="Metro Exodus Screenshot 5" loading="lazy">
+        </div>
+        <div class="media-grid-item" data-index="5" data-full="public/images/metro-exodus-ss-6.webp">
+          <img src="public/images/metro-exodus-ss-6.webp" alt="Metro Exodus Screenshot 6" loading="lazy">
+        </div>
+        <div class="media-grid-item" data-index="6" data-full="public/images/metro-exodus-ss-7.webp">
+          <img src="public/images/metro-exodus-ss-7.webp" alt="Metro Exodus Screenshot 7" loading="lazy">
+        </div>
+        <div class="media-grid-item" data-index="7" data-full="public/images/metro-exodus-ss-8.webp">
+          <img src="public/images/metro-exodus-ss-8.webp" alt="Metro Exodus Screenshot 8" loading="lazy">
+        </div>
+        <div class="media-grid-item" data-index="8" data-full="public/images/metro-exodus-ss-9.webp">
+          <img src="public/images/metro-exodus-ss-9.webp" alt="Metro Exodus Screenshot 9" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Лайтбокс для просмотра скриншотов -->
+  <div class="modal" id="media-slider-modal">
+    <div class="modal_dialog media-slider-dialog">
+      <div class="modal_content media-slider-content">
+        <div class="modal_close" id="media-slider-close">&#10006;</div>
+        <button class="slider-nav-btn slider-prev" id="media-slider-prev" aria-label="Предыдущий слайд">&#10094;</button>
+        <button class="slider-nav-btn slider-next" id="media-slider-next" aria-label="Следующий слайд">&#10095;</button>
+        <div class="media-slider-img-wrap">
+          <img id="media-slider-img" src="" alt="Metro Exodus Screenshot Fullscreen">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно с трейлером -->
+  <div class="modal" id="trailer-modal">
+    <div class="modal_dialog trailer-modal-dialog">
+      <div class="modal_content trailer-modal-content">
+        <div class="modal_close" id="trailer-close">&#10006;</div>
+        <div class="trailer-iframe-wrap">
+          <iframe
+            id="trailer-iframe"
+            src=""
+            data-src="https://www.youtube.com/embed/fbbqlvuovQ0?autoplay=1"
+            title="Metro Exodus - Official Gameplay Trailer"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно подписки на новости -->
+  <div class="modal" id="order-modal">
+    <div class="modal_dialog" style="max-width: 460px; width: 92%;">
+      <div class="modal_content metal-panel" style="padding: 2.25rem 2rem; position: relative;">
+        <div class="modal_close" id="order-close">&#10006;</div>
+        
+        <!-- Form View -->
+        <div id="subscribe-form-view">
+          <div class="tech-stamp text-primary font-bold" style="font-size: 0.68rem; letter-spacing: 0.15em;">РАДИОВОЛНА «АВРОРЫ» // РАССЫЛКА</div>
+          <h3 class="modal_title text-glow" style="margin-top: 0.35rem; font-size: 1.45rem; line-height: 1.2;">ПОДПИСКА НА НОВОСТИ</h3>
+          <p class="text-muted font-mono text-[10px] tracking-[0.15em] mb-4">ПОЛУЧАЙТЕ ОПЕРАТИВНЫЕ СВОДКИ И ОБНОВЛЕНИЯ ВСЕЛЕННОЙ METRO</p>
+
+          <form id="subscribe-form" action="#">
+            <div class="modal_input_group">
+              <label class="font-mono text-[9px] text-primary tracking-[0.1em] block mb-1">ВАШЕ ИМЯ ИЛИ ПОЗЫВНОЙ</label>
+              <input required placeholder="Введите имя (напр. Артем)" name="sub_name" id="sub-name" type="text" class="modal_input font-mono" value="Артем">
+            </div>
+
+            <div class="modal_input_group">
+              <label class="font-mono text-[9px] text-primary tracking-[0.1em] block mb-1">ЭЛЕКТРОННАЯ ПОЧТА (EMAIL)</label>
+              <input required placeholder="name@example.com" name="sub_email" id="sub-email" type="email" class="modal_input font-mono" value="spartan@gmail.com">
+              <span class="checker font-mono text-[9px]" id="sub-email-error" style="color: #e23b3b; display: none; margin-top: 4px;">Ошибка: введите корректный адрес электронной почты</span>
+            </div>
+
+            <div class="modal_input_group">
+              <label class="font-mono text-[9px] text-primary tracking-[0.1em] block mb-1">ИНТЕРЕСУЮЩАЯ ПЛАТФОРМА</label>
+              <select id="sub-platform" class="modal_input font-mono" style="cursor: pointer; padding: 0.75rem 1rem;">
+                <option value="Steam">🎮 PC (Steam)</option>
+                <option value="PlayStation">🎮 PlayStation</option>
+                <option value="Xbox">🎮 Xbox Series X|S</option>
+                <option value="Все платформы">📡 Все платформы и новости Вселенной Метро</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-solid shimmer-btn" id="sub-submit-btn" style="width: 100%; margin-top: 1.25rem; border-radius: 4px; padding: 0.85rem 0; font-size: 0.78rem;">ПОДТВЕРДИТЬ ПОДПИСКУ</button>
+          </form>
+        </div>
+
+        <!-- Success View with Achievement Stamp -->
+        <div id="subscribe-success-view" style="display: none; text-align: center; padding: 1rem 0;">
+          <div style="width: 64px; height: 64px; background: rgba(44, 181, 62, 0.15); border: 2px solid var(--rad); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem auto; font-size: 2rem; color: var(--rad); box-shadow: 0 0 25px rgba(44, 181, 62, 0.4);">✔</div>
+          <div class="tech-stamp font-bold" style="color: var(--rad); font-size: 0.72rem; letter-spacing: 0.2em;">ДОСТУП ПРЕДОСТАВЛЕН</div>
+          <h3 class="modal_title text-glow" style="margin-top: 0.35rem; font-size: 1.5rem; color: #fff;">УСПЕШНО ОФОРМЛЕНО!</h3>
+          <p style="color: var(--foreground-muted); font-size: 0.85rem; line-height: 1.6; margin-top: 0.75rem;">
+            Благодарим за подписку, <strong id="sub-res-name" style="color: #fff;">Артем</strong>! Свежие сводки и эксклюзивные материалы будут приходить на <strong id="sub-res-email" style="color: var(--primary);">spartan@gmail.com</strong>.
+          </p>
+          <div style="margin-top: 1.25rem; padding: 0.75rem; background: rgba(0,0,0,0.45); border: 1px dashed var(--border); border-radius: 4px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--foreground-muted);">
+            СТАТУС: <span style="color: var(--primary); font-weight: bold;">ПОДПИСАН НА ЧАСТОТУ «АВРОРЫ»</span>
+          </div>
+          <button type="button" class="btn btn-solid shimmer-btn" id="subscribe-close-success-btn" style="width: 100%; margin-top: 1.5rem; border-radius: 4px; padding: 0.75rem 0; font-size: 0.76rem;">ОТЛИЧНО</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Уведомления -->
+  <div id="toasts-container" class="toasts-container"></div>
+
+  <!-- Пасхалка: ввод "metro" или "aurora" на клавиатуре -->
+  <div class="egg-overlay" id="egg-overlay">
+    <div class="modal_content metal-panel" style="text-align: center; max-width: 480px; width: 90%;">
+      <div class="egg-close" id="egg-close">&#10006;</div>
+      <div style="font-size: 3rem;">📻</div>
+      <div style="margin-top: 1.5rem; font-size: 1.25rem; letter-spacing: 0.2em; font-weight: 700;" class="text-glow font-heading">DEVELOPER CHIPTUNE ROOM</div>
+      <div style="font-size: 0.85rem; color: var(--foreground-muted); margin-top: 0.5rem;" class="font-mono">Пасхалка активирована. Наслаждайтесь путешествием на «Авроре»!</div>
+    </div>
+  </div>
+
+  <!-- Пасхалка: ввод "2033" на клавиатуре — отсылка на Metro 2033 (первая часть) -->
+  <div class="egg-overlay" id="egg-2033-overlay">
+    <div class="egg-2033-panel">
+
+      <!-- Кнопка закрытия -->
+      <button class="egg-close" id="egg-2033-close" aria-label="Закрыть">&#10006;</button>
+
+      <!-- Шапка с годом -->
+      <div class="egg-2033-year">2033</div>
+
+      <!-- Значок радиации -->
+      <div class="egg-2033-icon" aria-hidden="true">☢</div>
+
+      <!-- Заголовок -->
+      <h2 class="egg-2033-title">METRO 2033</h2>
+      <p class="egg-2033-subtitle font-mono">// Начало. Московское метро. Станция ВДНХ.</p>
+
+      <!-- Цитата из игры -->
+      <blockquote class="egg-2033-quote">
+        «Наша планета мертва. Люди думают, что выжили,<br>
+        потому что ещё дышат. Но жизнь в метро — это не жизнь.»
+        <cite>— Артём</cite>
+      </blockquote>
+
+      <!-- Статистика игры -->
+      <div class="egg-2033-stats">
+        <div class="egg-2033-stat">
+          <span class="egg-2033-stat-value">2033</span>
+          <span class="egg-2033-stat-label">ГОД ДЕЙСТВИЯ</span>
+        </div>
+        <div class="egg-2033-stat">
+          <span class="egg-2033-stat-value">12</span>
+          <span class="egg-2033-stat-label">СТАНЦИЙ МОСКВЫ</span>
+        </div>
+        <div class="egg-2033-stat">
+          <span class="egg-2033-stat-value">10 ЛЕТ</span>
+          <span class="egg-2033-stat-label">ПОСЛЕ ВОЙНЫ</span>
+        </div>
+      </div>
+
+      <!-- Подпись -->
+      <p class="egg-2033-footer font-mono">
+        Код «<span style="color: var(--rad);">2033</span>» разблокирован — активирован режим радиации
+      </p>
+
+    </div>
+  </div>
+
+  <!-- Подвал сайта -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-credit">
+        Made by <span>Rinat</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/core.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

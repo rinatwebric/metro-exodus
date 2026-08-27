@@ -1,0 +1,220 @@
+/* ==========================================================================
+   METRO EXODUS - OFFICIAL MEDIA GALLERY & MINIMALIST SLIDER
+   ========================================================================== */
+
+.subpage-hero.media-hero {
+  border-bottom: none !important;
+  background: transparent !important;
+  padding: 8rem 0 2rem 0 !important;
+  text-align: center;
+}
+
+.media-hero .section-title {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.media-hero .title-accent-bar {
+  width: 46px;
+  height: 3px;
+  background: var(--primary);
+  margin: 0.75rem auto 2.5rem auto;
+  border-radius: 2px;
+  box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.media-gallery-section {
+  padding-bottom: 6rem;
+}
+
+.media-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.media-grid-item {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #06070a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  transition: transform 0.35s var(--ease-out-expo), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.media-grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s var(--ease-out-expo), filter 0.3s ease;
+}
+
+.media-grid-item:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: rgba(245, 197, 24, 0.75);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85), 0 0 22px var(--primary-glow);
+  z-index: 2;
+}
+
+.media-grid-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Minimalist Lightbox Slider Modal */
+.media-slider-dialog {
+  max-width: 1040px !important;
+  width: 82% !important;
+  margin: 0 auto;
+  position: relative;
+  overflow: visible !important;
+}
+
+.media-slider-content {
+  padding: 0 !important;
+  background: #000000 !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.95) !important;
+  border-radius: 6px !important;
+  overflow: visible !important;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.media-slider-img-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.media-slider-img-wrap img {
+  width: 100%;
+  max-height: 84vh;
+  object-fit: contain;
+  display: block;
+  transition: opacity 0.2s ease;
+}
+
+/* External Minimalist Arrow Controls */
+.slider-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background: transparent !important;
+  border: none !important;
+  color: rgba(255, 255, 255, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  cursor: pointer;
+  z-index: 40;
+  transition: color 0.2s ease, transform 0.2s ease;
+  user-select: none;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+.slider-nav-btn:hover {
+  color: var(--primary);
+  transform: translateY(-50%) scale(1.2);
+}
+
+.slider-prev {
+  left: -58px;
+}
+
+.slider-next {
+  right: -58px;
+}
+
+/* Minimalist External Close Button */
+.media-slider-content .modal_close {
+  position: absolute;
+  top: -2.5rem;
+  right: 0;
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  background: transparent !important;
+  border: none !important;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, transform 0.2s ease;
+  z-index: 40;
+  cursor: pointer;
+}
+
+.media-slider-content .modal_close:hover {
+  color: #ffffff;
+  transform: scale(1.15);
+}
+
+/* Counter is removed */
+.media-slider-counter {
+  display: none !important;
+}
+
+@media (max-width: 992px) {
+  .media-slider-dialog {
+    width: 90% !important;
+  }
+  .slider-prev {
+    left: -40px;
+    font-size: 1.8rem;
+  }
+  .slider-next {
+    right: -40px;
+    font-size: 1.8rem;
+  }
+  .media-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .media-slider-dialog {
+    width: 94% !important;
+  }
+  .slider-prev {
+    left: 8px;
+    background: rgba(0,0,0,0.5) !important;
+    border-radius: 50% !important;
+    font-size: 1.5rem;
+    width: 38px;
+    height: 38px;
+  }
+  .slider-next {
+    right: 8px;
+    background: rgba(0,0,0,0.5) !important;
+    border-radius: 50% !important;
+    font-size: 1.5rem;
+    width: 38px;
+    height: 38px;
+  }
+  .media-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

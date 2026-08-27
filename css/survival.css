@@ -1,0 +1,223 @@
+/* ==========================================================================
+   METRO EXODUS - SURVIVAL HUD, NIXIE TIMER & WEATHER SCANNER
+   ========================================================================== */
+
+.subpage-hero.survival-hero {
+  background: transparent !important;
+  border-bottom: none !important;
+}
+
+.stopwatch-wrapper {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.45);
+  transition: none !important;
+}
+
+.stopwatch-wrapper:hover {
+  border-color: var(--border) !important;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.45) !important;
+  transform: none !important;
+}
+
+.stopwatch-wrapper::after,
+.stopwatch-wrapper::before {
+  display: none !important;
+}
+
+/* Nixie Gasmask Timer */
+.nixie-timer-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nixie-digits {
+  font-family: var(--font-mono);
+  font-size: 4rem !important;
+  font-weight: 700;
+  color: var(--primary);
+  text-shadow: 0 0 20px var(--primary-glow), 0 0 2px var(--primary);
+  letter-spacing: 0.05em;
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+
+.nixie-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  color: var(--foreground-muted);
+  display: block;
+  margin-top: 0.4rem;
+}
+
+/* ==========================================================================
+   WEATHER METEOROLOGICAL SCANNER (OPENWEATHERMAP)
+   ========================================================================== */
+.weather-panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.45);
+  padding: 2.75rem;
+  margin-top: 3rem;
+  transition: none !important;
+}
+
+.weather-panel:hover {
+  border-color: var(--border) !important;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.45) !important;
+  transform: none !important;
+}
+
+.weather-panel::after,
+.weather-panel::before {
+  display: none !important;
+}
+
+.weather-search-form {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.weather-input {
+  flex-grow: 1;
+  padding: 0.8rem 1.2rem;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--foreground);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.25s ease;
+}
+
+.weather-input:focus {
+  border-color: var(--primary);
+}
+
+.weather-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.weather-chip {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  padding: 0.25rem 0.65rem;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--foreground-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.weather-chip:hover {
+  background: rgba(245, 197, 24, 0.12);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.weather-result-display {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.weather-main-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+  padding-bottom: 1.5rem;
+}
+
+.weather-temp-huge {
+  font-family: var(--font-mono);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1;
+  text-shadow: 0 0 15px var(--primary-glow);
+}
+
+.weather-city-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.weather-desc-badge {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--foreground-muted);
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+}
+
+.weather-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.weather-metric-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  padding: 1rem 1.25rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.metric-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--foreground-muted);
+  text-transform: uppercase;
+}
+
+.metric-val {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.weather-status-msg {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--foreground-muted);
+  text-align: center;
+  padding: 2rem;
+}
+
+@media (max-width: 600px) {
+  .weather-search-form {
+    flex-direction: column;
+  }
+  .weather-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}

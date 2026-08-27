@@ -1,0 +1,17 @@
+/* ==========================================================================
+   METRO EXODUS - MASTER STYLESHEET (MODULAR ARCHITECTURE)
+   ========================================================================== */
+
+/* 1. Base Design System, Typography, Layout, Header, Footer & Modals */
+@import url('base.css');
+
+/* 2. Micro-interactions & Keyframe Animations */
+@import url('animations.css');
+
+/* 3. Page Components */
+@import url('home.css');
+@import url('journey.css');
+@import url('arsenal.css');
+@import url('crew.css');
+@import url('survival.css');
+@import url('media.css');

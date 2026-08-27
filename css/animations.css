@@ -1,0 +1,446 @@
+/* ==========================================================================
+   METRO EXODUS - PRODUCTION STUDIO ANIMATIONS MODULE
+   ========================================================================== */
+
+/* --- Keyframe Animations --- */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px var(--primary-glow);
+    border-color: var(--border-hover);
+  }
+  50% {
+    box-shadow: 0 0 30px var(--primary-glow), 0 0 10px var(--primary);
+    border-color: var(--primary);
+  }
+}
+
+@keyframes radarSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes lightSweep {
+  0% { left: -100%; }
+  50%, 100% { left: 150%; }
+}
+
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes nixieFlicker {
+  0%, 100% { opacity: 1; text-shadow: 0 0 20px var(--primary-glow), 0 0 2px var(--primary); }
+  3% { opacity: 0.85; text-shadow: 0 0 10px var(--primary-glow); }
+  6% { opacity: 1; text-shadow: 0 0 20px var(--primary-glow), 0 0 2px var(--primary); }
+  77% { opacity: 1; }
+  78% { opacity: 0.9; text-shadow: 0 0 8px var(--primary-glow); }
+  79% { opacity: 1; }
+}
+
+@keyframes borderGlowTrack {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* --- Reveal Classes (Triggered via IntersectionObserver or initial load) --- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.active, .no-js .reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-35px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-left.active, .no-js .reveal-left {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(35px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-right.active, .no-js .reveal-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.94);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-scale.active, .no-js .reveal-scale {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Staggered Delays for Grid Children */
+.delay-1 { transition-delay: 0.1s !important; }
+.delay-2 { transition-delay: 0.2s !important; }
+.delay-3 { transition-delay: 0.3s !important; }
+.delay-4 { transition-delay: 0.4s !important; }
+.delay-5 { transition-delay: 0.5s !important; }
+.delay-6 { transition-delay: 0.6s !important; }
+
+/* --- Studio Interactive Micro-Animations --- */
+
+.studio-card-glow {
+  position: relative;
+}
+
+.studio-card-glow::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--primary-glow) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.studio-card-glow:hover::after {
+  opacity: 1;
+}
+
+.shimmer-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transform: skewX(-25deg);
+  transition: 0.75s ease;
+}
+
+.shimmer-btn:hover::before {
+  left: 150%;
+}
+
+.float-item {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+.nixie-flicker {
+  animation: nixieFlicker 6s infinite;
+}
+
+.pulse-primary {
+  animation: pulseGlow 3s infinite ease-in-out;
+}
+
+.radar-rotate-anim {
+  animation: radarSpin 24s linear infinite;
+}
+
+/* ==========================================================================
+   METRO 2033 — ПАСХАЛКА (Easter Egg Overlay)
+   Активируется набором "2033" на клавиатуре
+   ========================================================================== */
+
+/* Анимация пульсации значка радиации */
+@keyframes radPulse {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 0 0 20px rgba(44, 181, 62, 0.6), 0 0 60px rgba(44, 181, 62, 0.2);
+  }
+  50% {
+    transform: scale(1.12);
+    text-shadow: 0 0 40px rgba(44, 181, 62, 0.9), 0 0 80px rgba(44, 181, 62, 0.4);
+  }
+}
+
+/* Мерцание года "2033" */
+@keyframes yearFlicker {
+  0%, 100% { opacity: 0.15; }
+  50%       { opacity: 0.06; }
+}
+
+/* Плавное появление панели */
+@keyframes panelSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Фон оверлея — тёмный с зелёным туманом */
+#egg-2033-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: radial-gradient(ellipse at 50% 40%, rgba(44, 181, 62, 0.08) 0%, rgba(5, 13, 7, 0.97) 65%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  /* Скрыт по умолчанию */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+/* Показ оверлея */
+#egg-2033-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Карточка пасхалки */
+.egg-2033-panel {
+  position: relative;
+  max-width: 520px;
+  width: 92%;
+  padding: 2.5rem 2.25rem 2rem;
+  text-align: center;
+
+  background: linear-gradient(160deg, rgba(10, 22, 12, 0.98) 0%, rgba(5, 10, 6, 0.99) 100%);
+  border: 1px solid rgba(44, 181, 62, 0.35);
+  border-radius: 4px;
+  box-shadow:
+    0 0 0 1px rgba(44, 181, 62, 0.1),
+    0 0 60px rgba(44, 181, 62, 0.12),
+    0 30px 80px rgba(0, 0, 0, 0.7);
+
+  animation: panelSlideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Кнопка закрытия */
+.egg-2033-panel .egg-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: 1px solid rgba(44, 181, 62, 0.25);
+  color: rgba(44, 181, 62, 0.6);
+  width: 28px;
+  height: 28px;
+  border-radius: 2px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.egg-2033-panel .egg-close:hover {
+  color: #2cb53e;
+  border-color: #2cb53e;
+  background: rgba(44, 181, 62, 0.08);
+}
+
+/* Большой год на фоне — декоративный */
+.egg-2033-year {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-heading);
+  font-size: 9rem;
+  font-weight: 900;
+  color: rgba(44, 181, 62, 0.07);
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  user-select: none;
+  animation: yearFlicker 3s ease-in-out infinite;
+  line-height: 1;
+}
+
+/* Знак радиации */
+.egg-2033-icon {
+  font-size: 3.5rem;
+  animation: radPulse 2.5s ease-in-out infinite;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* Заголовок METRO 2033 */
+.egg-2033-title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: #2cb53e;
+  text-shadow: 0 0 25px rgba(44, 181, 62, 0.5), 0 0 2px rgba(44, 181, 62, 0.8);
+  margin: 0.6rem 0 0.3rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Подзаголовок */
+.egg-2033-subtitle {
+  font-size: 0.72rem;
+  color: rgba(44, 181, 62, 0.55);
+  letter-spacing: 0.12em;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Цитата Артёма */
+.egg-2033-quote {
+  position: relative;
+  z-index: 1;
+  padding: 1rem 1.25rem;
+  margin: 0 0 1.5rem;
+  background: rgba(44, 181, 62, 0.05);
+  border-left: 3px solid rgba(44, 181, 62, 0.5);
+  border-radius: 0 3px 3px 0;
+  text-align: left;
+  font-style: italic;
+  font-size: 0.87rem;
+  line-height: 1.65;
+  color: #b8d4bc;
+}
+
+.egg-2033-quote cite {
+  display: block;
+  margin-top: 0.65rem;
+  font-style: normal;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: rgba(44, 181, 62, 0.6);
+  letter-spacing: 0.1em;
+}
+
+/* Блок со статистикой */
+.egg-2033-stats {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(44, 181, 62, 0.12);
+  border-bottom: 1px solid rgba(44, 181, 62, 0.12);
+  margin-bottom: 1.25rem;
+}
+
+.egg-2033-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.egg-2033-stat-value {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2cb53e;
+  text-shadow: 0 0 12px rgba(44, 181, 62, 0.4);
+}
+
+.egg-2033-stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: rgba(44, 181, 62, 0.45);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Нижняя подпись */
+.egg-2033-footer {
+  position: relative;
+  z-index: 1;
+  font-size: 0.68rem;
+  color: rgba(44, 181, 62, 0.4);
+  letter-spacing: 0.1em;
+}
+

@@ -1,0 +1,447 @@
+.subpage-hero.journey-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  border-bottom: none !important;
+  background-image: 
+    linear-gradient(to bottom, rgba(7, 8, 11, 0.65) 0%, rgba(7, 8, 11, 0.15) 35%, rgba(7, 8, 11, 0.8) 75%, #07080b 100%),
+    url(../public/images/metro-exodus-aurora-bg.png) !important;
+  background-size: 100% 100%, cover !important;
+  background-position: 0 0, center 35% !important;
+  background-repeat: no-repeat, no-repeat !important;
+  box-shadow: inset 0 -30px 30px -10px #07080b;
+}
+
+.subpage-hero.journey-hero .section-title {
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.95), 0 1px 3px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* --- Locations Viewer Component --- */
+.locations-container {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 3rem;
+}
+
+.loc-viewer {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.55);
+  min-height: 420px;
+  height: 100%;
+  display: flex;
+}
+
+.loc-viewer img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s var(--ease-out-expo);
+  pointer-events: none;
+}
+
+.loc-ambient-btn {
+  position: absolute;
+  bottom: 1.5rem !important;
+  left: 1.5rem !important;
+  z-index: 15;
+  background: rgba(10, 10, 14, 0.88) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border) !important;
+  color: var(--foreground) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  padding: 0.55rem 1.15rem;
+  border-radius: 4px;
+}
+
+.loc-ambient-btn:hover {
+  border-color: var(--primary) !important;
+  color: var(--primary) !important;
+  box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.locations-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  justify-content: center;
+}
+
+.loc-nav-item {
+  padding: 1.25rem 1.75rem;
+  text-align: left;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.015);
+  transition: all 0.35s var(--ease-out-expo);
+}
+
+.loc-nav-item:hover,
+.loc-nav-item.active {
+  border-color: var(--border-hover);
+  background: var(--card);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.35);
+  padding-left: 2.25rem;
+}
+
+.loc-title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.loc-desc {
+  font-size: 0.82rem;
+  color: var(--foreground-muted);
+  margin-top: 0.25rem;
+}
+
+/* --- Aurora Train Showcase & Patrol Animation --- */
+.aurora-showcase-wrapper {
+  padding: 2.75rem;
+  display: grid;
+  grid-template-columns: 1.1fr 1.4fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.aurora-img-wrapper {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: radial-gradient(circle at 50% 50%, rgba(30, 30, 42, 0.6) 0%, rgba(8, 8, 12, 0.95) 100%);
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65), 0 0 25px var(--primary-glow);
+  padding: 1.25rem;
+}
+
+.aurora-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.85));
+  transition: transform 0.6s var(--ease-out-expo);
+}
+
+.aurora-showcase-wrapper:hover .aurora-preview-img {
+  transform: scale(1.05);
+}
+
+.parent-patrol-block {
+  border: 1px solid var(--border);
+  background: radial-gradient(circle at 50% 50%, #12151f 0%, #08090d 80%, #040507 100%);
+  border-radius: 8px;
+  position: relative;
+  height: 250px;
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.95), 0 8px 24px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Сцена рельсов и поезда */
+.railway-scene {
+  position: absolute;
+  inset: 0;
+}
+
+/* Двухрельсовое полотно расположено внизу */
+.railway-track-full {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 24px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: none;
+  background: rgba(14, 12, 10, 0.45);
+}
+
+/* Шпалы (статичные) */
+.rail-sleepers {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(90deg,
+      #1d1611 0px,
+      #2c2118 2px,
+      #3d2e22 8px,
+      #140f0c 10px,
+      transparent 10px,
+      transparent 24px);
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.9);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Верхний и нижний стальные рельсы */
+.rail-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3.5px;
+  background: linear-gradient(to bottom, #f8fafc 0%, #cbd5e1 40%, #64748b 80%, #1e293b 100%);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4), 0 2px 4px rgba(0, 0, 0, 0.95);
+  z-index: 3;
+}
+
+.rail-top {
+  top: 5px;
+}
+
+.rail-bottom {
+  bottom: 5px;
+}
+
+/* Поезд «Аврора» (масштабирован точно по ширине колеи) */
+.aurora-train-wagon {
+  position: absolute;
+  left: 0;
+  bottom: 24px;
+  height: 52px;
+  z-index: 5;
+  width: max-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.aurora-train-sprite {
+  width: 268px;
+  height: 52px;
+  object-fit: contain;
+  display: block;
+  transform: scaleX(-1);
+  /* Разворачиваем поезд носом вправо */
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 8px rgba(243, 156, 18, 0.15)) !important;
+  background: transparent !important;
+}
+
+/* Прожектор на носу паровоза (начинается прямо от фар) */
+.train-headlight {
+  position: absolute;
+  right: -165px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 170px;
+  height: 52px;
+  background: radial-gradient(ellipse at left, rgba(255, 225, 140, 0.95) 0%, rgba(243, 156, 18, 0.4) 45%, transparent 80%);
+  clip-path: polygon(0% 42%, 100% 0%, 100% 100%, 0% 58%);
+  filter: blur(2px);
+  pointer-events: none;
+  animation: headlightGlow 2.5s infinite ease-in-out;
+}
+
+@keyframes headlightGlow {
+
+  0%,
+  100% {
+    opacity: 0.9;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Клубы пара из трубы паровоза */
+.train-steam {
+  position: absolute;
+  right: 48px;
+  top: -12px;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+.steam-puff {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  filter: blur(3px);
+  animation: steamDrift 1.5s infinite ease-out;
+}
+
+.steam-puff.s1 {
+  width: 10px;
+  height: 10px;
+  animation-delay: 0s;
+}
+
+.steam-puff.s2 {
+  width: 14px;
+  height: 14px;
+  animation-delay: 0.5s;
+}
+
+.steam-puff.s3 {
+  width: 18px;
+  height: 18px;
+  animation-delay: 1s;
+}
+
+@keyframes steamDrift {
+  0% {
+    opacity: 0.7;
+    transform: translate(0, 0) scale(0.6);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-55px, -22px) scale(2.4);
+  }
+}
+
+/* 5. Тактический HUD статус */
+.railway-hud {
+  position: absolute;
+  top: 14px;
+  left: 18px;
+  right: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--primary, #f39c12);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.hud-tag {
+  background: rgba(10, 12, 16, 0.75);
+  padding: 4px 10px;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  background: #2ecc71;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #2ecc71;
+  animation: pulseGreen 1.5s infinite;
+}
+
+@keyframes pulseGreen {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
+}
+
+@media (max-width: 992px) {
+
+  .map-layout,
+  .locations-container,
+  .aurora-showcase-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .loc-viewer {
+    height: 360px;
+  }
+}
+
+/* --- Currency Converter Section --- */
+.converter {
+  padding: 3rem 0;
+  background: rgba(0, 0, 0, 0.25);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.converter h3 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  letter-spacing: 0.15em;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.inner_converter {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .inner_converter {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .inner_converter {
+    grid-template-columns: 1fr;
+  }
+}
+
+.inner_converter > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.inner_converter label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: var(--foreground-muted);
+  text-transform: uppercase;
+}
+
+.inner_converter input {
+  background: rgba(14, 16, 22, 0.85);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--foreground);
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.inner_converter input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 12px var(--primary-glow);
+  background: rgba(20, 24, 34, 0.95);
+}

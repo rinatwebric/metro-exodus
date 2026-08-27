@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оружейный Арсенал | METRO EXODUS</title>
+  <link rel="icon" type="image/svg+xml" href="/public/images/logo-title.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+
+  <!-- Кастомный курсор -->
+  <div class="custom-cursor" id="cursor"></div>
+  <div class="custom-cursor-dot" id="cursor-dot"></div>
+
+  <!-- Шапка сайта: логотип, навигация, кнопки цвета, подписка -->
+  <header>
+    <div class="header-container">
+      <div class="logo-nav-group">
+        <a href="../index.html" class="logo-group">
+          <img src="../public/images/metro-exodus-logo.png" alt="Metro Exodus" class="nav-logo-img">
+        </a>
+
+        <nav>
+          <ul>
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="journey.html">Маршрут</a></li>
+            <li><a href="arsenal.html" class="active">Оружие</a></li>
+            <li><a href="crew.html">Персонажи</a></li>
+            <li><a href="survival.html">Выживание</a></li>
+            <li><a href="cards.html">Карточки</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Кнопки цвета и подписка -->
+      <div class="hud-controls">
+        <div class="colors-buttons">
+          <div class="btn-color" data-color="#f5c518" style="background: #f5c518;" title="Янтарный Спарты"></div>
+          <div class="btn-color" data-color="#00d2ff" style="background: #00d2ff;" title="Неоновый Синий"></div>
+          <div class="btn-color" data-color="#2cb53e" style="background: #2cb53e;" title="Радиационный Зеленый"></div>
+          <div class="btn-color" data-color="#e23b3b" style="background: #e23b3b;" title="Аварийный Красный"></div>
+        </div>
+
+        <button class="btn btn-sm shimmer-btn" id="order-btn" style="padding: 0.4rem 0.95rem; font-size: 0.72rem;">ПОДПИСАТЬСЯ</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Баннер страницы -->
+  <section class="subpage-hero arsenal-hero">
+    <div class="container reveal">
+      <div class="hero-breadcrumbs">
+        <a href="../index.html">ГЛАВНАЯ</a>
+        <span>/</span>
+        <span class="text-primary">ВООРУЖЕНИЕ</span>
+      </div>
+      <div class="section-kicker">ОРУЖЕЙНЫЙ АРСЕНАЛ</div>
+      <h1 class="section-title">Вооружение и снаряжение</h1>
+      <p class="section-desc">
+        В суровых пустошах постапокалипсиса надежное оружие — единственный гарант выживания. Изучите боевой арсенал экспедиции «Авроры»: от кустарных пневматических винтовок и штурмовых автоматов до тактических спецсредств.
+      </p>
+    </div>
+  </section>
+
+  <!-- Слайдер огнестрельного оружия -->
+  <section id="customizer">
+    <div class="container">
+      <div class="section-header reveal" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; max-width: 980px; margin: 0 auto 1.5rem auto;">
+        <h2 class="section-title" style="margin-bottom: 0;">Огнестрельное оружие</h2>
+        <div class="slider-counter" id="gun-counter">01 / 09</div>
+      </div>
+
+      <div class="showcase-card metal-panel reveal">
+        <!-- Gun Viewport -->
+        <div class="gun-viewport">
+          <button class="slider-nav-btn prev-btn" id="gun-prev-btn" aria-label="Предыдущее оружие">&#10094;</button>
+          <img id="gun-preview-img" src="../public/images/weapon-tikhar.jpg" alt="Тихарь">
+          <button class="slider-nav-btn next-btn" id="gun-next-btn" aria-label="Следующее оружие">&#10095;</button>
+        </div>
+
+        <!-- Gun Info Details Bar -->
+        <div class="showcase-info-bar">
+          <div class="showcase-header-row">
+            <h3 class="story-title font-heading" id="gun-display-name">Пневматическая винтовка «Тихарь»</h3>
+            <div class="tech-stamp" id="gun-serial-stamp">СЕРИЯ: SP-TK77 // ПНЕВМАТИКА</div>
+          </div>
+          <p class="story-text" id="gun-display-desc">
+            Самодельное бесшумное пневматическое оружие. Стреляет стальными шариками и зажигательными пулями. Требует ручной подкачки давления.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Слайдер метательного оружия -->
+  <section id="throwables" style="padding: 3.5rem 0 5.5rem 0;">
+    <div class="container">
+      <div class="section-header reveal" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; max-width: 980px; margin: 0 auto 1.5rem auto;">
+        <h2 class="section-title" style="margin-bottom: 0;">Метательное оружие</h2>
+        <div class="slider-counter" id="throw-counter">01 / 04</div>
+      </div>
+
+      <div class="showcase-card metal-panel reveal">
+        <!-- Throwable Viewport -->
+        <div class="gun-viewport">
+          <button class="slider-nav-btn prev-btn" id="throw-prev-btn" aria-label="Предыдущее метательное">&#10094;</button>
+          <img id="throw-preview-img" src="../public/images/армейский-нож.webp" alt="Метательный армейский нож">
+          <button class="slider-nav-btn next-btn" id="throw-next-btn" aria-label="Следующее метательное">&#10095;</button>
+        </div>
+
+        <!-- Throwable Info Details Bar -->
+        <div class="showcase-info-bar">
+          <div class="showcase-header-row">
+            <h3 class="story-title font-heading" id="throw-display-name">Метательный армейский нож</h3>
+            <div class="tech-stamp" id="throw-serial-stamp">СЕРИЯ: SP-KN01 // ХОЛОДНОЕ ОРУЖИЕ</div>
+          </div>
+          <p class="story-text" id="throw-display-desc">
+            Тяжелый закаленный клинок для бесшумного мгновенного устранения противников. Брошенный нож можно подобрать с тела поверженного врага.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Модальное окно подписки на новости -->
+  <div class="modal" id="order-modal">
+    <div class="modal_dialog" style="max-width: 460px; width: 92%;">
+      <div class="modal_content metal-panel" style="padding: 2.25rem 2rem; position: relative;">
+        <div class="modal_close" id="order-close">&#10006;</div>
+        
+        <!-- Form View -->
+        <div id="subscribe-form-view">
+          <div class="tech-stamp text-primary font-bold" style="font-size: 0.68rem; letter-spacing: 0.15em;">РАДИОВОЛНА «АВРОРЫ» // РАССЫЛКА</div>
+          <h3 class="modal_title text-glow" style="margin-top: 0.35rem; font-size: 1.45rem; line-height: 1.2;">ПОДПИСКА НА НОВОСТИ</h3>
+          <p class="text-muted font-mono text-[10px] tracking-[0.15em] mb-4">ПОЛУЧАЙТЕ ОПЕРАТИВНЫЕ СВОДКИ И ОБНОВЛЕНИЯ ВСЕЛЕННОЙ METRO</p>
+
+          <form id="subscribe-form" action="#">
+            <div class="modal_input_group">
+              <label class="font-mono text-[9px] text-primary tracking-[0.1em] block mb-1">ВАШЕ ИМЯ ИЛИ ПОЗЫВНОЙ</label>
+              <input required placeholder="Введите имя (напр. Артем)" name="sub_name" id="sub-name" type="text" class="modal_input font-mono" value="Артем">
+            </div>
+
+            <div class="modal_input_group">
+              <label class="font-mono text-[9px] text-primary tracking-[0.1em] block mb-1">ЭЛЕКТРОННАЯ ПОЧТА (EMAIL)</label>
+              <input required placeholder="name@example.com" name="sub_email" id="sub-email" type="email" class="modal_input font-mono" value="spartan@gmail.com">
+              <span class="checker font-mono text-[9px]" id="sub-email-error" style="color: #e23b3b; display: none; margin-top: 4px;">Ошибка: введите корректный адрес электронной почты</span>
+            </div>
+
+            <div class="modal_input_group">
+              <label class="font-mono text-[9px] text-primary tracking-[0.1em] block mb-1">ИНТЕРЕСУЮЩАЯ ПЛАТФОРМА</label>
+              <select id="sub-platform" class="modal_input font-mono" style="cursor: pointer; padding: 0.75rem 1rem;">
+                <option value="Steam">🎮 PC (Steam)</option>
+                <option value="PlayStation">🎮 PlayStation</option>
+                <option value="Xbox">🎮 Xbox Series X|S</option>
+                <option value="Все платформы">📡 Все платформы и новости Вселенной Метро</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-solid shimmer-btn" id="sub-submit-btn" style="width: 100%; margin-top: 1.25rem; border-radius: 4px; padding: 0.85rem 0; font-size: 0.78rem;">ПОДТВЕРДИТЬ ПОДПИСКУ</button>
+          </form>
+        </div>
+
+        <!-- Success View with Achievement Stamp -->
+        <div id="subscribe-success-view" style="display: none; text-align: center; padding: 1rem 0;">
+          <div style="width: 64px; height: 64px; background: rgba(44, 181, 62, 0.15); border: 2px solid var(--rad); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem auto; font-size: 2rem; color: var(--rad); box-shadow: 0 0 25px rgba(44, 181, 62, 0.4);">✔</div>
+          <div class="tech-stamp font-bold" style="color: var(--rad); font-size: 0.72rem; letter-spacing: 0.2em;">ДОСТУП ПРЕДОСТАВЛЕН</div>
+          <h3 class="modal_title text-glow" style="margin-top: 0.35rem; font-size: 1.5rem; color: #fff;">УСПЕШНО ОФОРМЛЕНО!</h3>
+          <p style="color: var(--foreground-muted); font-size: 0.85rem; line-height: 1.6; margin-top: 0.75rem;">
+            Благодарим за подписку, <strong id="sub-res-name" style="color: #fff;">Артем</strong>! Свежие сводки и эксклюзивные материалы будут приходить на <strong id="sub-res-email" style="color: var(--primary);">spartan@gmail.com</strong>.
+          </p>
+          <div style="margin-top: 1.25rem; padding: 0.75rem; background: rgba(0,0,0,0.45); border: 1px dashed var(--border); border-radius: 4px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--foreground-muted);">
+            СТАТУС: <span style="color: var(--primary); font-weight: bold;">ПОДПИСАН НА ЧАСТОТУ «АВРОРЫ»</span>
+          </div>
+          <button type="button" class="btn btn-solid shimmer-btn" id="subscribe-close-success-btn" style="width: 100%; margin-top: 1.5rem; border-radius: 4px; padding: 0.75rem 0; font-size: 0.76rem;">ОТЛИЧНО</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Уведомления -->
+  <div id="toasts-container" class="toasts-container"></div>
+
+  <!-- Подвал сайта -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-credit">
+        Made by <span>Rinat</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/core.js"></script>
+  <script src="../js/arsenal.js"></script>
+</body>
+</html>

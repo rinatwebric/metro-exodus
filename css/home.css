@@ -1,0 +1,461 @@
+/* ==========================================================================
+   METRO EXODUS - HOMEPAGE (HERO, ABOUT GAME, TRAILER)
+   ========================================================================== */
+
+/* --- Hero Section --- */
+#hero {
+  position: relative;
+  isolation: isolate;
+  height: 100vh;
+  min-height: 680px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  padding: 7.5rem 1.5rem 4rem 1.5rem;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-video-iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw;
+  min-height: 100vh;
+  min-width: 177.77vh;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border: 0;
+  filter: none !important;
+  z-index: 1;
+}
+
+.hero-bg img,
+.hero-fallback-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  scale: 1;
+  filter: none !important;
+  z-index: 1;
+}
+
+.hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--background) 0%, transparent 25%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  z-index: 2;
+  text-align: center;
+}
+
+.hero-top-logo-wrap {
+  margin-top: 4rem;
+}
+
+.hero-center-logo {
+  max-width: 320px;
+  width: 75%;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.9));
+  transition: transform 0.4s var(--ease-out-expo);
+}
+
+.hero-center-logo:hover {
+  transform: scale(1.03);
+}
+
+.hero-bottom-actions {
+  margin-top: auto;
+  margin-bottom: 0.5rem;
+}
+
+.hero-cta-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.btn-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 220px;
+  height: 42px;
+  background: var(--primary);
+  color: #0c0c10;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid var(--primary);
+  border-radius: 2px;
+  cursor: pointer;
+  box-shadow: 0 4px 18px var(--primary-glow);
+  transition: transform 0.2s var(--ease-out-expo), box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.btn-hero-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px var(--primary-glow);
+  filter: brightness(1.08);
+}
+
+#hero-order-text {
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+.btn-hero-trailer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  width: 220px;
+  height: 40px;
+  background: rgba(36, 36, 44, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #e4e4ed;
+  font-family: var(--font-heading);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 2px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s var(--ease-out-expo), border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.btn-hero-trailer:hover {
+  transform: translateY(-2px);
+  background: rgba(48, 48, 58, 0.95);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+}
+
+.btn-hero-trailer .play-icon {
+  fill: currentColor;
+  transition: transform 0.2s ease;
+}
+
+.btn-hero-trailer:hover .play-icon {
+  transform: scale(1.15);
+}
+
+/* --- About Game Section --- */
+.about-game {
+  padding: 6.5rem 0;
+  /* display: flex; */
+}
+
+.about-game-content {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-game-video iframe {
+  width: 100%;
+  border-radius: 15px;
+  aspect-ratio: 16/9;
+  min-height: 320px;
+}
+
+/* --- Factions Section --- */
+.factions {
+  padding: 5rem 0;
+}
+
+.faction-main-title h2 {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 2.5rem;
+}
+
+.faction-cards {
+  display: flex;
+  gap: 16px;
+  height: 600px;
+  width: 100%;
+}
+
+.faction-card {
+  flex: 1;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-sizing: border-box;
+  transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.3s ease, border-color 0.3s ease;
+}
+
+.faction-card:hover {
+  border-color: var(--primary, #f39c12);
+}
+
+.faction-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(to top, rgba(10, 10, 14, 0.96) 0%, rgba(10, 10, 14, 0.45) 50%, rgba(0, 0, 0, 0.15) 100%);
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.faction-card.active-faction {
+  flex: 10;
+  cursor: default;
+}
+
+.faction-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  border-radius: inherit;
+  transition: all 0.4s ease;
+}
+
+.faction-card:not(.active-faction) .faction-content {
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.faction-card .faction-title {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #f1f1f1;
+  white-space: nowrap;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  margin: 0;
+  transition: transform 0.4s ease, font-size 0.4s ease, color 0.3s ease;
+}
+
+.faction-card.active-faction .faction-content {
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 40px;
+}
+
+.faction-card.active-faction .faction-title {
+  writing-mode: horizontal-tb;
+  transform: none;
+  font-size: 2.2rem;
+  margin: 0 0 16px 0;
+}
+
+.faction-card .faction-description {
+  display: none;
+  max-width: 520px;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #d1d1db;
+}
+
+.faction-card.active-faction .faction-description {
+  display: block;
+  animation: fadeInText 0.5s ease 0.15s both;
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.faction-hanza {
+  background-image: url(../public/images/factions-hanza.jpg);
+}
+
+.faction-fanatici {
+  background-image: url(../public/images/fractions-fanatics.jpg);
+}
+
+.faction-bandits {
+  background-image: url(../public/images/factions-bandits.jpg);
+}
+
+.faction-fire-worshippers {
+  background-image: url(../public/images/factions-fireworship.jpg);
+}
+
+.faction-children-of-the-forest {
+  background-image: url(../public/images/fractions-children-of-the-forest.jpg);
+}
+
+/* Hazard Section */ 
+.hazards {
+  background-image: url(../public/images/hazard-background.png);
+  background-size: auto;
+  background-position: center;
+  background-repeat: repeat;
+}
+
+.hazards-cards {
+  display: flex;
+  gap: 16px;
+}
+
+.hazard-card  {
+  flex: 1;
+  min-height: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  cursor: pointer;
+}
+
+/* Тень и свечение при наведении на карточку + плавный подъем */
+.hazard-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary, #f39c12);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(243, 156, 18, 0.35);
+}
+
+/* Затемняющая тень внутри карточки при наведении (чтобы текст легко читался) */
+.hazard-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 45%, rgba(0, 0, 0, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hazard-card:hover::before {
+  opacity: 1;
+}
+
+.hazard-card:hover .hazard-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hazard-content {
+  position: relative;
+  z-index: 2;
+  padding: 40px;
+  max-height: 500px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.hazard-title {
+  font-size: 28px;
+}
+.hazard-description {
+  font-size: 14px;
+}
+
+.hazard-radiation {
+  background-image: url(../public/images/hazard-radiation.png);
+}
+
+.hazard-anomaly {
+  background-image: url(../public/images/hazard-anomaly.png);
+}
+
+.hazard-sandstorm {
+  background-image: url(../public/images/hazard-sandstorm.png);
+}
+
+.hazard-survival {
+  background-image: url(../public/images/hazard-survival.png);
+}
+  
+
+/* --- Video Trailer Section --- */
+.video-wrapper {
+  aspect-ratio: 16/9;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .hero-center-logo {
+    max-width: 280px;
+    width: 80%;
+  }
+
+  .about-game iframe {
+    min-height: 240px;
+  }
+}

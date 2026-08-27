@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Медиа | METRO EXODUS</title>
+  <link rel="icon" type="image/svg+xml" href="/public/images/logo-title.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+
+  <!-- Кастомный курсор -->
+  <div class="custom-cursor" id="cursor"></div>
+  <div class="custom-cursor-dot" id="cursor-dot"></div>
+
+  <!-- Шапка сайта: логотип, навигация, кнопки цвета, подписка -->
+  <header>
+    <div class="header-container">
+      <div class="logo-nav-group">
+        <a href="../index.html" class="logo-group">
+          <img src="../public/images/metro-exodus-logo.png" alt="Metro Exodus" class="nav-logo-img">
+        </a>
+
+        <nav>
+          <ul>
+            <li><a href="../index.html">Главная</a></li>
+            <li><a href="journey.html">Маршрут</a></li>
+            <li><a href="arsenal.html">Оружие</a></li>
+            <li><a href="crew.html">Персонажи</a></li>
+            <li><a href="survival.html">Выживание</a></li>
+            <li><a href="../index.html#media" class="active">Медиа</a></li>
+            <li><a href="cards.html">Карточки</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Кнопки цвета и подписка -->
+      <div class="hud-controls">
+        <div class="colors-buttons">
+          <div class="btn-color" data-color="#f5c518" style="background: #f5c518;" title="Янтарный Спарты"></div>
+          <div class="btn-color" data-color="#00d2ff" style="background: #00d2ff;" title="Неоновый Синий"></div>
+          <div class="btn-color" data-color="#2cb53e" style="background: #2cb53e;" title="Радиационный Зеленый"></div>
+          <div class="btn-color" data-color="#e23b3b" style="background: #e23b3b;" title="Аварийный Красный"></div>
+        </div>
+
+        <button class="btn btn-sm shimmer-btn" id="order-btn" style="padding: 0.4rem 0.95rem; font-size: 0.72rem;">ПОДПИСАТЬСЯ</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Баннер страницы -->
+  <section class="subpage-hero media-hero">
+    <div class="container reveal">
+      <h1 class="section-title">МЕДИА</h1>
+      <div class="title-accent-bar"></div>
+    </div>
+  </section>
+
+  <!-- Сетка скриншотов 3x3 -->
+  <section class="media-gallery-section">
+    <div class="container">
+      <div class="media-gallery-grid reveal">
+        <!-- 1 -->
+        <div class="media-grid-item" data-full="../public/images/metro-exodus-ss-1.webp">
+          <img src="../public/images/metro-exodus-ss-1.webp" alt="Metro Exodus Screenshot 1" loading="lazy">
+        </div>
+        <!-- 2 -->
+        <div class="media-grid-item" data-full="../public/images/metro-exodus-ss-2.webp">
+          <img src="../public/images/metro-exodus-ss-2.webp" alt="Metro Exodus Screenshot 2" loading="lazy">
+        </div>
+        <!-- 3 -->
+        <div class="media-grid-item" data-full="../public/images/metro-exodus-ss-3.webp">
+          <img src="../public/images/metro-exodus-ss-3.webp" alt="Metro Exodus Screenshot 3" loading="lazy">
+        </div>
+        <!-- 4 -->
+        <div class="media-grid-item" data-full="../public/images/metro-exodus-ss-4.webp">
+          <img src="../public/images/metro-exodus-ss-4.webp" alt="Metro Exodus Screenshot 4" loading="lazy">
+        </div>
+        <!-- 5 -->
+        <div class="media-grid-item" data-full="../public/images/metro-exodus-ss-5.webp">
+          <img src="../public/images/metro-exodus-ss-5.webp" alt="Metro Exodus Screenshot 5" loading="lazy">
+        </div>
+        <!-- 6 -->
+        <div class="media-grid-item" data-full="../public/images/metro-exodus-ss-6.webp">
+          <img src="../public/images/metro-exodus-ss-6.webp" alt="Metro Exodus Screenshot 6" loading="lazy">
+        </div>
+        <!-- 7 -->
+        <div class="media-grid-item" data-full="../public/images/metro-exodus-ss-7.webp">
+          <img src="../public/images/metro-exodus-ss-7.webp" alt="Metro Exodus Screenshot 7" loading="lazy">
+        </div>
+        <!-- 8 -->
+        <div class="media-grid-item" data-full="../public/images/metro-exodus-ss-8.webp">
+          <img src="../public/images/metro-exodus-ss-8.webp" alt="Metro Exodus Screenshot 8" loading="lazy">
+        </div>
+        <!-- 9 -->
+        <div class="media-grid-item" data-full="../public/images/metro-exodus-ss-9.webp">
+          <img src="../public/images/metro-exodus-ss-9.webp" alt="Metro Exodus Screenshot 9" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Лайтбокс для просмотра скриншотов -->
+  <div class="modal" id="media-slider-modal">
+    <div class="modal_dialog media-slider-dialog">
+      <div class="modal_content media-slider-content">
+        <div class="modal_close" id="media-slider-close">&#10006;</div>
+        <button class="slider-nav-btn slider-prev" id="media-slider-prev" aria-label="Предыдущий слайд">&#10094;</button>
+        <button class="slider-nav-btn slider-next" id="media-slider-next" aria-label="Следующий слайд">&#10095;</button>
+        <div class="media-slider-img-wrap">
+          <img id="media-slider-img" src="" alt="Metro Exodus Screenshot Fullscreen">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Модальное окно подписки на новости -->
+  <div class="modal" id="order-modal">
+    <div class="modal_dialog" style="max-width: 460px; width: 92%;">
+      <div class="modal_content metal-panel" style="padding: 2.25rem 2rem; position: relative;">
+        <div class="modal_close" id="order-close">&#10006;</div>
+        
+        <!-- Form View -->
+        <div id="subscribe-form-view">
+          <div class="tech-stamp text-primary font-bold" style="font-size: 0.68rem; letter-spacing: 0.15em;">РАДИОВОЛНА «АВРОРЫ» // РАССЫЛКА</div>
+          <h3 class="modal_title text-glow" style="margin-top: 0.35rem; font-size: 1.45rem; line-height: 1.2;">ПОДПИСКА НА НОВОСТИ</h3>
+          <p class="text-muted font-mono text-[10px] tracking-[0.15em] mb-4">ПОЛУЧАЙТЕ ОПЕРАТИВНЫЕ СВОДКИ И ОБНОВЛЕНИЯ ВСЕЛЕННОЙ METRO</p>
+
+          <form id="subscribe-form" action="#">
+            <div class="modal_input_group">
+              <label class="font-mono text-[9px] text-primary tracking-[0.1em] block mb-1">ВАШЕ ИМЯ ИЛИ ПОЗЫВНОЙ</label>
+              <input required placeholder="Введите имя (напр. Артем)" name="sub_name" id="sub-name" type="text" class="modal_input font-mono" value="Артем">
+            </div>
+
+            <div class="modal_input_group">
+              <label class="font-mono text-[9px] text-primary tracking-[0.1em] block mb-1">ЭЛЕКТРОННАЯ ПОЧТА (EMAIL)</label>
+              <input required placeholder="name@example.com" name="sub_email" id="sub-email" type="email" class="modal_input font-mono" value="spartan@gmail.com">
+              <span class="checker font-mono text-[9px]" id="sub-email-error" style="color: #e23b3b; display: none; margin-top: 4px;">Ошибка: введите корректный адрес электронной почты</span>
+            </div>
+
+            <div class="modal_input_group">
+              <label class="font-mono text-[9px] text-primary tracking-[0.1em] block mb-1">ИНТЕРЕСУЮЩАЯ ПЛАТФОРМА</label>
+              <select id="sub-platform" class="modal_input font-mono" style="cursor: pointer; padding: 0.75rem 1rem;">
+                <option value="Steam">🎮 PC (Steam)</option>
+                <option value="PlayStation">🎮 PlayStation</option>
+                <option value="Xbox">🎮 Xbox Series X|S</option>
+                <option value="Все платформы">📡 Все платформы и новости Вселенной Метро</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-solid shimmer-btn" id="sub-submit-btn" style="width: 100%; margin-top: 1.25rem; border-radius: 4px; padding: 0.85rem 0; font-size: 0.78rem;">ПОДТВЕРДИТЬ ПОДПИСКУ</button>
+          </form>
+        </div>
+
+        <!-- Success View with Achievement Stamp -->
+        <div id="subscribe-success-view" style="display: none; text-align: center; padding: 1rem 0;">
+          <div style="width: 64px; height: 64px; background: rgba(44, 181, 62, 0.15); border: 2px solid var(--rad); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem auto; font-size: 2rem; color: var(--rad); box-shadow: 0 0 25px rgba(44, 181, 62, 0.4);">✔</div>
+          <div class="tech-stamp font-bold" style="color: var(--rad); font-size: 0.72rem; letter-spacing: 0.2em;">ДОСТУП ПРЕДОСТАВЛЕН</div>
+          <h3 class="modal_title text-glow" style="margin-top: 0.35rem; font-size: 1.5rem; color: #fff;">УСПЕШНО ОФОРМЛЕНО!</h3>
+          <p style="color: var(--foreground-muted); font-size: 0.85rem; line-height: 1.6; margin-top: 0.75rem;">
+            Благодарим за подписку, <strong id="sub-res-name" style="color: #fff;">Артем</strong>! Свежие сводки и эксклюзивные материалы будут приходить на <strong id="sub-res-email" style="color: var(--primary);">spartan@gmail.com</strong>.
+          </p>
+          <div style="margin-top: 1.25rem; padding: 0.75rem; background: rgba(0,0,0,0.45); border: 1px dashed var(--border); border-radius: 4px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--foreground-muted);">
+            СТАТУС: <span style="color: var(--primary); font-weight: bold;">ПОДПИСАН НА ЧАСТОТУ «АВРОРЫ»</span>
+          </div>
+          <button type="button" class="btn btn-solid shimmer-btn" id="subscribe-close-success-btn" style="width: 100%; margin-top: 1.5rem; border-radius: 4px; padding: 0.75rem 0; font-size: 0.76rem;">ОТЛИЧНО</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Уведомления -->
+  <div id="toasts-container" class="toasts-container"></div>
+
+  <!-- Подвал сайта -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-credit">
+        Made by <span>Rinat</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/core.js"></script>
+</body>
+</html>
